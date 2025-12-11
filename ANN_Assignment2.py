@@ -12,7 +12,6 @@ from sklearn.preprocessing import MinMaxScaler, LabelEncoder
 from sklearn.metrics import classification_report, confusion_matrix
 from imblearn.over_sampling import SMOTE
 
-
 # =============================================================================
 # PART 1: DATA PREPROCESSING PIPELINE
 # Purpose: Clean, encode, and normalize raw data for neural network ingestion.
@@ -286,6 +285,10 @@ if __name__ == "__main__":
     plt.ylabel('Actual Class')
     plt.xlabel('Predicted Class')
     plt.show()
+
+    # Generate the detailed report
+    print("\n--- Classification Report (Precision, Recall, F1-Score) ---")
+    print(classification_report(y_test, y_pred, target_names=['No Churn', 'Churn']))
 
     # Figure 3: ANN Architecture Diagram
     # Generates a visual representation of the network topology: 20 -> 12 -> 8 -> 1.
